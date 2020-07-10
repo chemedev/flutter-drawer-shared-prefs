@@ -6,6 +6,7 @@ import 'dart:convert';
 import '../drawer.dart';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = '/home';
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -39,9 +40,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text('Awesome'),
-      ),
+      appBar: AppBar(title: Text('Awesome'), actions: <Widget>[
+        IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {
+              Navigator.pop(context);
+            })
+      ]),
       body: data != null
           ? ListView.builder(
               itemBuilder: (context, index) {
