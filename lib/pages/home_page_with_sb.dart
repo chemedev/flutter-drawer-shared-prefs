@@ -17,7 +17,7 @@ class HomePageSB extends StatelessWidget {
 
   Stream<List<String>> getStream() {
     var data = Stream<List<String>>.fromIterable(
-        [List<String>.generate(20, (index) => 'Item ${index}')]);
+        [List<String>.generate(20, (index) => 'Item $index')]);
     return data;
   }
 
