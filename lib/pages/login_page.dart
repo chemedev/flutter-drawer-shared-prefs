@@ -1,3 +1,4 @@
+import 'package:awesome/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:awesome/pages/home_page.dart';
@@ -58,7 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(height: 20),
                             RaisedButton(
                               onPressed: () => {
-                                Navigator.pushNamed(context, HomePage.routeName)
+                                Constants.prefs.setBool('loggedIn', true),
+                                Navigator.pushReplacementNamed(
+                                    context, HomePage.routeName)
                               },
                               child: Text('Sign In'),
                               color: Colors.orange,

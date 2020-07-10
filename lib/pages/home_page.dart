@@ -1,9 +1,11 @@
+import 'package:awesome/utils/constants.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import '../drawer.dart';
+import 'login_page.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = '/home';
@@ -44,7 +46,8 @@ class _HomePageState extends State<HomePage> {
         IconButton(
             icon: Icon(Icons.exit_to_app),
             onPressed: () {
-              Navigator.pop(context);
+              Constants.prefs.setBool('loggedIn', false);
+              Navigator.pushReplacementNamed(context, LoginPage.routeName);
             })
       ]),
       body: data != null
