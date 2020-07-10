@@ -1,3 +1,4 @@
+import 'package:awesome/pages/home_page_with_sb.dart';
 import 'package:awesome/utils/constants.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Constants.prefs.getBool('loggedIn') == true
-            ? HomePage()
+            ? HomePageSB()
             : LoginPage(),
         theme: ThemeData(primarySwatch: Colors.blue),
         routes: {
